@@ -26,6 +26,7 @@ people.forEach((person) => {
     let pic = document.createElement('img')
 
     pic.setAttribute('class','picDiv')
+
     let charNum = getCharNumber(person.url)
 
     name.textContent = person.name
@@ -49,3 +50,9 @@ function getCharNumber(charURL) {
         return charID
     }
 }
+
+const maleCharacters = people.filter(person => person.gender === 'male')
+const femaleCharacters = people.filter(person => person.gender === 'female')
+
+console.log(maleCharacters)
+console.log(femaleCharacters)
