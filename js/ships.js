@@ -1,4 +1,4 @@
-import { starships } from './assets/starships.js'
+import { starships } from '../assets/starships.js'
 
 let mianArea = document.querySelector('main')
 
