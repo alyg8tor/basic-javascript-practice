@@ -1,3 +1,7 @@
+* {
+    scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: 'Montserrat', sans-serif;
     src: url(https://fonts.googleapis.com/css?family=Montserrat&display=swap);
@@ -5,7 +9,7 @@
     src: url(https://fonts.googleapis.com/css?family=Barlow&display=swap);
 }
 
-h1 {
+h1, h3 {
     color: #ffee58; 
 }
 
@@ -40,7 +44,6 @@ nav ul {
 #navbar {
     display: flex;
     justify-content: center;
-    position: fixed;
     width: 100%;
     height: 100px;
 }  
@@ -69,21 +72,65 @@ a:hover {
     color: #ffee58;
 }
 
-main {
+.charMain {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-gap: 2rem;
     width: 100%;
-    max-width: 1280px;
+    max-width: 1030px;
     margin: 0 auto;
-    margin-bottom: 6rem;
 }
 
+.filmMain {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    width: 100%;
+    max-width: 1030px;
+    margin: 0 auto;
+}
 
-main img {
-    max-width: 300px;
+.shipMain {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 2rem;
+    width: 100%;
+    max-width: 1030px;
+    margin: 0 auto;
+}
+
+h3, h4 {
+    margin: 0px;
 }
 
 .picDiv {
-    border: 5px solid red;
+    max-width: 150px;
+}
+
+.charDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+.shipPic {
+    max-width: 200px;
+}
+
+#myBtn {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: 10px;
+    max-width: 30px;
+    width: 100%;
+    font-size: 12px;
+    border-color: rgba(85, 85, 85, 0.2);
+    background-color: rgb(100,100,100);
+    padding: 3px;
+}
+/*On Hover Color Change*/
+#myBtn:hover {
+    background-color: black;
 }
