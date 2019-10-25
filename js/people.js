@@ -7,7 +7,6 @@ let mainArea = document.querySelector('main')
 people.forEach((person) => {
     let personDiv = document.createElement('div')
     let name = document.createElement('h3')
-    let gender = document.createElement('h4')
     let pic = document.createElement('img')
 
     mainArea.setAttribute('class','charMain')
@@ -17,11 +16,9 @@ people.forEach((person) => {
     let charNum = getCharNumber(person.url)
 
     name.textContent = person.name
-    gender.textContent = `Gender: ${person.gender}`
     pic.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
 
     personDiv.appendChild(name)
-    personDiv.appendChild(gender)
     personDiv.appendChild(pic)
 
     mainArea.appendChild(personDiv)
@@ -37,9 +34,29 @@ function getCharNumber(charURL) {
         return charID
     }
 }
+const allDivs = Array.from(document.querySelector('div'))
+console.log(allDivs)
+let mainHeader = document.querySelector('header')
+let maleButton  = document.createElement('button')
+maleButton.textContent = 'MALE CHARACTERS'
 
-//const maleCharacters = people.filter(person => person.gender === 'male')
-//const femaleCharacters = people.filter(person => person.gender === 'female')
+maleButton.addEventListener('click', () => {
+    maleCharacters.forEach(character => {
+        let matchedDiv = allDivs.find(oneDiv => {
+            return oneDiv.firstChild.textContent === character.name
+        })
+        matchedDiv.setAttribute("style", "visibility: hidden;")
+    })
+})
 
-//console.log(maleCharacters)
-//console.log(femaleCharacters)
+let femaleButton = document.createElement('button')
+femaleButton.textContent = 'FEMALE CHARACTERS'
+
+mainHeader.appendChild(maleButton)
+mainHeader.appendChild(femaleButton)
+
+const maleCharacters = people.filter(person => person.gender === 'male')
+const femaleCharacters = people.filter(person => person.gender === 'female')
+
+console.log(maleCharacters)
+console.log(femaleCharacters)

@@ -9,10 +9,6 @@
     src: url(https://fonts.googleapis.com/css?family=Barlow&display=swap);
 }
 
-h1, h3 {
-    color: #ffee58; 
-}
-
 body {
     background-image: url("/assets/scapeBackground.png"); 
     background-attachment: fixed;
@@ -23,6 +19,7 @@ body {
     font-family: 'Barlow', sans-serif;
 }
 
+/*HOME CSS*/
 h1, p {
     font-family: 'Montserrat', sans-serif;
 }
@@ -72,27 +69,10 @@ a:hover {
     color: #ffee58;
 }
 
+/*CHARACTERS CSS*/
 .charMain {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    grid-gap: 2rem;
-    width: 100%;
-    max-width: 1030px;
-    margin: 0 auto;
-}
-
-.filmMain {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 2rem;
-    width: 100%;
-    max-width: 1030px;
-    margin: 0 auto;
-}
-
-.shipMain {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 2rem;
     width: 100%;
     max-width: 1030px;
@@ -114,10 +94,52 @@ h3, h4 {
     width: 200px;
 }
 
+header {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    font-size: 1rem;
+    padding: 5px;
+    font-family: 'Barlow', sans-serif;
+    background: none;
+    border: 3px solid #ffee58;
+    color: white;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    
+}
+
+/*FILM CSS*/
+.filmMain {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    width: 100%;
+    max-width: 1030px;
+    margin: 0 auto;
+}
+
+h1, h3 {
+    color: #ffee58; 
+}
+
+/*STARSHIPS CSS*/
+.shipMain {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 2rem;
+    width: 100%;
+    max-width: 1030px;
+    margin: 0 auto;
+}
+
 .shipPic {
     max-width: 200px;
 }
 
+/*BACK TO TOP BUTTON*/
 #myBtn {
     display: flex;
     justify-content: flex-end;
