@@ -9,6 +9,7 @@ starships.forEach(ships => {
 
     shipPic.setAttribute('class','shipPic')
     mianArea.setAttribute('class','shipMain')
+    shipDiv.setAttribute('class', 'shipDiv')
     let shipNum = getCharNumber(ships.url)
 
     shipName.textContent = ships.name 
