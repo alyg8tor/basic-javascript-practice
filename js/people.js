@@ -34,29 +34,100 @@ function getCharNumber(charURL) {
         return charID
     }
 }
-const allDivs = Array.from(document.querySelector('div'))
-console.log(allDivs)
+const allDivs = Array.from(document.querySelectorAll('div'))
+
 let mainHeader = document.querySelector('header')
+
+let revertButton = document.createElement('button')
+revertButton.textContent = 'ALL CHARACTERS'
+
+revertButton.addEventListener('click', () => {
+    femaleCharacters.forEach((character) => {
+        let matchedDiv = allDivs.find((oneDiv) => {
+            return oneDiv.firstChild.textContent === character.name
+        })
+        matchedDiv.setAttribute('style', 'display: revert;')
+
+    })
+    maleCharacters.forEach((character) => {
+        let matchedDiv = allDivs.find((oneDiv) => {
+            return oneDiv.firstChild.textContent === character.name
+        })
+        matchedDiv.setAttribute('style', 'display: revert;')
+
+    })
+    otherCharacters.forEach((character) => {
+        let matchedDiv = allDivs.find((oneDiv) => {
+            return oneDiv.firstChild.textContent === character.name
+        })
+        matchedDiv.setAttribute('style', 'display: revert;')
+    })
+})
+
 let maleButton  = document.createElement('button')
 maleButton.textContent = 'MALE CHARACTERS'
 
 maleButton.addEventListener('click', () => {
-    maleCharacters.forEach(character => {
-        let matchedDiv = allDivs.find(oneDiv => {
+    femaleCharacters.forEach((character) => {
+        let matchedDiv = allDivs.find((oneDiv) => {
             return oneDiv.firstChild.textContent === character.name
         })
-        matchedDiv.setAttribute("style", "visibility: hidden;")
+        matchedDiv.setAttribute('style', 'display: none;')
+        //matchedDiv.classList.add('animated', 'bounceOutLeft')
+
+    })
+    otherCharacters.forEach((character) => {
+        let matchedDiv = allDivs.find((oneDiv) => {
+            return oneDiv.firstChild.textContent === character.name
+        })
+        matchedDiv.setAttribute('style', 'display: none;')
+        //matchedDiv.classList.add('animated', 'bounceOutLeft')
     })
 })
 
 let femaleButton = document.createElement('button')
 femaleButton.textContent = 'FEMALE CHARACTERS'
 
+
+femaleButton.addEventListener('click', () => {
+    maleCharacters.forEach((character) => {
+        let matchedDiv = allDivs.find((oneDiv) => {
+            return oneDiv.firstChild.textContent === character.name
+        })
+        matchedDiv.setAttribute('style', 'display: none;')
+    })
+    otherCharacters.forEach((character) => {
+        let matchedDiv = allDivs.find((oneDiv) => {
+            return oneDiv.firstChild.textContent === character.name
+        })
+        matchedDiv.setAttribute('style', 'display: none;')
+    })
+})
+
+let otherButton = document.createElement('button')
+otherButton.textContent = 'OTHER CHARACTERS'
+
+otherButton.addEventListener('click', () => {
+    femaleCharacters.forEach((character) => {
+        let matchedDiv = allDivs.find((oneDiv) => {
+            return oneDiv.firstChild.textContent === character.name
+        })
+        matchedDiv.setAttribute('style', 'display: none;')
+    })
+    maleCharacters.forEach((character) => {
+        let matchedDiv = allDivs.find((oneDiv) => {
+            return oneDiv.firstChild.textContent === character.name
+        })
+        matchedDiv.setAttribute('style', 'display: none;')
+    })
+})
+
+mainHeader.appendChild(revertButton)
 mainHeader.appendChild(maleButton)
 mainHeader.appendChild(femaleButton)
+mainHeader.appendChild(otherButton)
 
 const maleCharacters = people.filter(person => person.gender === 'male')
 const femaleCharacters = people.filter(person => person.gender === 'female')
+const otherCharacters = people.filter(person => person.gender !== 'female' && person.gender !== 'male')
 
-console.log(maleCharacters)
-console.log(femaleCharacters)

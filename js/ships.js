@@ -13,6 +13,7 @@ starships.forEach(ships => {
 
     shipName.textContent = ships.name 
     shipPic.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
+    shipPic.onerror = "this.onerror=null;this.src='../assets/filler.jpg';"
     shipDiv.appendChild(shipName)
     shipDiv.appendChild(shipPic)
 
