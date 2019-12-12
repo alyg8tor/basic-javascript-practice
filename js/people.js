@@ -39,7 +39,7 @@ const allDivs = Array.from(document.querySelectorAll('div'))
 let mainHeader = document.querySelector('header')
 
 let revertButton = document.createElement('button')
-revertButton.textContent = 'ALL CHARACTERS'
+revertButton.textContent = 'RESET'
 
 revertButton.addEventListener('click', () => {
     femaleCharacters.forEach((character) => {
@@ -65,7 +65,7 @@ revertButton.addEventListener('click', () => {
 })
 
 let maleButton  = document.createElement('button')
-maleButton.textContent = 'MALE CHARACTERS'
+maleButton.textContent = 'DUDES'
 
 maleButton.addEventListener('click', () => {
     femaleCharacters.forEach((character) => {
@@ -86,7 +86,7 @@ maleButton.addEventListener('click', () => {
 })
 
 let femaleButton = document.createElement('button')
-femaleButton.textContent = 'FEMALE CHARACTERS'
+femaleButton.textContent = 'CHICKS'
 
 
 femaleButton.addEventListener('click', () => {
@@ -105,7 +105,7 @@ femaleButton.addEventListener('click', () => {
 })
 
 let otherButton = document.createElement('button')
-otherButton.textContent = 'OTHER CHARACTERS'
+otherButton.textContent = 'OTHER'
 
 otherButton.addEventListener('click', () => {
     femaleCharacters.forEach((character) => {
